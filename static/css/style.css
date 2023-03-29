@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    background-color: black;
+}
+
+button {
+    all: unset;
+}
+
+body {
+    text-align: center;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    justify-items: center;
+    grid-template-columns: minmax(300px, 1fr);
+    grid-template-rows: fit-content 1fr fit-content;
+}
+
+.title{
+    grid-area: header;
+    width: 100%;
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: lightsteelblue;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width:100%;
+    gap: 15px;
+    justify-content: center;
+    background: url("/static/css/avocado-1838785_1920.jpg") no-repeat center center fixed;
+    -webkit-background-size: 100%; 
+    -moz-background-size: 100%; 
+    -o-background-size: 100%; 
+    background-size: 100%; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover; 
+    padding: 15px;
+}
+
+.cardform {
+   background-color: rgba(240, 248, 255, 0.5);
+   height: max-content;
+   
+}
+
+.cardform :hover {
+    background-color: aliceblue;
+    border-radius: 20%;
+}
+
+
+.cardform, .card {
+    border-radius: 20%;
+}
+
+.card {
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+        "title title title"
+        ". . ."
+        "prepT cookT servingT"
+        "prepB cookB servingB"
+        "tags tags tags";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 3fr 2fr 2fr 1fr;
+    justify-items: center;
+    gap: 5px;
+    padding: 15px;
+}
+
+
+.recipe {
+    grid-area: title;
+    font-size: 1.5rem;
+    justify-self: center;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.PrepT {
+    grid-area: prepT;
+}
+.PrepB {
+    grid-area: prepB;
+}
+.CookT {
+    grid-area: cookT;
+}
+.CookB {
+    grid-area: cookB;
+}
+.ServingT {
+    grid-area: servingT;
+}
+.ServingB {
+    grid-area: servingB;
+}
+
+.tag {
+    grid-area: tags;
+    font-size: 0.75rem;
+}
+
+.end {
+    grid-area: footer;
+    background-color: lightsteelblue;
+    width: 100%;
+    padding: 1rem;
+}
+

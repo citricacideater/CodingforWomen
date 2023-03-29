@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/recipeStyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>{{.RecipeName}}</h1>
+    </header>
+    <main>
+        <div class="details">
+            <h3 class="PrepT">Prep Time</h3>
+            <p class="PrepB">{{.PrepTime}}</p>
+            <h3 class="CookT">Cook Time</h3>
+            <p class="CookB">{{.CookTime}}</p>
+            <h3 class="ServingT">Serving Size</h3>
+            <p class="ServingB">{{.ServingSize}}</p>
+        </div>
+        <div class="Ingredients">
+            <h2 class="IngT">Ingredients</h2>
+            <table class="IngB">
+                {{ range $key, $value := .Ingredients }}
+                <tr>
+                    <td><strong>{{ $key }}</strong>:</td>
+                    <td>{{ $value }}</td>
+                </tr>
+                {{ end }}
+            </table>
+          
+
+            
+        </div>
+        
+        <div class="Instructions">
+            <h2 class="InsT">Instructions</h2>
+            <ol class="InsL">
+                {{range .Directions}}
+                <li>{{.}}</li>
+                <br>
+                {{end}}
+            </ol>
+        </div>
+        <div class="Extras">
+            <div class="Source"><strong>{{.Source}}</strong></div>
+            <br>
+            <div class="Tags">
+                |{{range .Tags}} {{.}} |{{end}}
+            </div>
+        </div>
+    </main>
+    <footer>
+        Return
+    </footer>
+</body>
+</html>

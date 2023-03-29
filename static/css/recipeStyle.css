@@ -1,0 +1,105 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+body {
+    text-align: center;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    justify-items: center;
+    grid-template-columns: minmax(300px, 1fr);
+    grid-template-rows: fit-content 1fr fit-content;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    padding: 15px;
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 
+    "details details details"
+    "ingredients instructions instructions"
+    "extras instructions instructions";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: fit-content 1fr;
+    gap: 20px;
+}
+
+.details {
+    grid-area: details;
+    display: grid;
+    grid-template-areas: 
+    "prepT cookT servingT"
+    "prepB cookB servingB";
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(2, 1fr);
+}
+
+.PrepT {
+    grid-area: prepT;
+}
+.PrepB {
+    grid-area: prepB;
+}
+.CookT {
+    grid-area: cookT;
+}
+.CookB {
+    grid-area: cookB;
+}
+.ServingT {
+    grid-area: servingT;
+}
+.ServingB {
+    grid-area: servingB;
+}
+
+.Ingredients {
+    grid-area: ingredients;
+    padding: 15px;
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "table";
+}
+
+.IngT {
+    grid-area: title;
+}
+
+.IngB {
+    grid-area: table;
+    border-collapse: collapse;
+}
+
+.IngB tr:nth-child(odd) {
+    background-color: aliceblue;
+}
+
+
+
+.Instructions {
+    grid-area: instructions;
+    text-align: justify;
+    padding: 15px;
+}
+
+.Extras {
+    grid-area: extras;
+}
+
+footer {
+    grid-area: footer;
+}
